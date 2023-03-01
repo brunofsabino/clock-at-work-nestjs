@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { registeringPointUser } from 'src/application/use-cases/registeringPointUser';
+import { registeringPointUser } from '@application/use-cases/registeringPointUser';
 import { DatabaseModule } from '../database/database.module';
 import { UsersController } from './controllers/users.controller';
 

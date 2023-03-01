@@ -1,6 +1,5 @@
 import { randomUUID } from 'node:crypto';
 
-/* eslint-disable prettier/prettier */
 export interface UserProps {
   name: string;
   registrationNumber: string;
@@ -46,7 +45,6 @@ export class User {
   public get password(): string {
     return this.props.password;
   }
-
   public set latitude(latitude: string) {
     this.props.latitude = latitude;
   }

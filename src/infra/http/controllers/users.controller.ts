@@ -1,6 +1,7 @@
-import { Controller, Get, Body, Post } from '@nestjs/common';
-import { registeringPointUser } from 'src/application/use-cases/registeringPointUser';
+import { Controller, Body, Post } from '@nestjs/common';
+import { registeringPointUser } from '@application/use-cases/registeringPointUser';
 import { CreateUserBody } from '../dtos/create-user-body';
+import { UserViewModel } from '../view-models/user-view-model';
 
 @Controller('users')
 export class UsersController {
@@ -25,7 +26,8 @@ export class UsersController {
       photoSelfie,
       registrationNumber,
     });
-
-    return { user };
+    return {
+      user: UserViewModel.toHTTP(user),
+    };
   }
 }
